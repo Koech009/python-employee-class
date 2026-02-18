@@ -1,16 +1,24 @@
-# Defining a class called Car
 class Car:
-    def __init__(self, brand, model, color):
+    def __init__(self, brand, model, color, mileage):
         self.brand = brand
         self.model = model
         self.color = color
+        self.mileage = mileage
+
+    def update_mileage(self, new_mileage):
+        self.mileage = new_mileage
+
+    def display_info(self):
+        return (
+            f"My car's brand is {self.brand} and model is {self.model}. "
+            f"It is {self.color} and has a mileage of {self.mileage} km."
+        )
 
 
-# creating and instance (an object)of the car class
-my_car = Car("Toyota", "Corolla", "Black")
-my_car2 = Car("Mazda", "Atenza", "dark-gray")
-# accessing attributes
-print(my_car.brand)
-print(my_car2.brand)
-print(my_car.color)
-print(my_car2.model)
+my_car = Car("Toyota", "Corolla", "Black", 34000)
+my_car2 = Car("Mazda", "Atenza", "Dark Gray", 23000)
+
+print(my_car.display_info())
+
+my_car.update_mileage(45000)
+print(my_car.display_info())
